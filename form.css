@@ -1,0 +1,86 @@
+form {
+  font-family: inherit;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: var(--blue-800);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 150%;
+  margin-bottom: 8px;
+}
+
+input {
+  padding: 16px 24px;
+  border-radius: 8px;
+  border: 1px solid var(--grey);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+input:active {
+  border: 1px solid var(--blue-800);
+}
+
+input:focus {
+  color: var(--blue-800);
+  border: 1px solid var(--blue-800);
+  outline: none;
+}
+
+button {
+  height: 56px;
+  border: none;
+  border-radius: 8px;
+  color: var(--white);
+  background-color: var(--blue-800);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+#submit-btn:enabled {
+  cursor: pointer;
+}
+
+.error-row {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.input-error {
+  border: 1px solid var(--red);
+  background-color: #ffe7e6;
+  color: var(--red);
+}
+
+.error-message {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 150%;
+  color: var(--red);
+}
+
+#dismiss-btn {
+  cursor: pointer;
+}
+
+@media (min-width: 1025px) {
+  #submit-btn:enabled {
+    background: linear-gradient(to right, #ff6a3a, #ff527b);
+  }
+
+  #dismiss-btn:hover {
+    background: linear-gradient(to right, #ff6a3a, #ff527b);
+  }
+}

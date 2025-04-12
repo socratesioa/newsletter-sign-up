@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="form.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
+  <body>
+    <main>
+      <!-- Sign-up form start -->
+      <div class="newsletter">
+        <div class="desktop-wrapper">
+          <section id="hero">
+            <picture>
+              <source
+                srcset="./assets/images/illustration-sign-up-desktop.svg"
+                media="(min-width: 1025px)"
+              />
+              <source
+                srcset="./assets/images/illustration-sign-up-mobile.svg"
+                media="(max-width: 1024px)"
+              />
+              <img
+                src="./assets/images/illustration-sign-up-desktop.svg"
+                alt="Sign-up Illustration"
+                class="hero-img"
+              />
+            </picture>
+          </section>
+          <section id="registration">
+            <div class="sign-up">
+              <h1>Stay updated!</h1>
+              <p>Join 60,000+ product managers receiving monthly updates on:</p>
+              <ul>
+                <li>
+                  <img
+                    src="./assets/images/icon-list.svg"
+                    class="icon-list"
+                    alt="Check"
+                  />
+                  Product discovery and building what matters
+                </li>
+                <li>
+                  <img
+                    src="./assets/images/icon-list.svg"
+                    class="icon-list"
+                    alt="Check"
+                  />Measuring to ensure updates are a success
+                </li>
+                <li>
+                  <img
+                    src="./assets/images/icon-list.svg"
+                    class="icon-list"
+                    alt="Check"
+                  />And much more!
+                </li>
+              </ul>
+            </div>
+            <form id="form" novalidate>
+              <div>
+                <div class="error-row">
+                  <label for="email">Email address</label>
+                  <span
+                    aria-live="polite"
+                    id="email-error"
+                    class="error-message"
+                  ></span>
+                </div>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="email@company.com"
+                />
+                <button type="submit" id="submit-btn" disabled>
+                  Subscribe to monthly newsletter
+                </button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+      <section id="success">
+        <div class="success-wrapper">
+          <div class="success-message">
+            <img
+              src="./assets/images/icon-success.svg"
+              height="64"
+              width="64"
+              alt="Successful Newsletter Registration"
+            />
+            <h1>Thanks for subscribing!</h1>
+            <p>
+              A confirmation email has been sent to
+              <span id="email-display"></span>. Please open it and click the
+              button inside to confirm your subscription.
+            </p>
+          </div>
+          <div class="dismiss-container">
+            <button id="dismiss-btn">Dismiss Message</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+    <script>
+      document
+        .getElementById("dismiss-btn")
+        .addEventListener("click", hideSections);
+
+      function hideSections() {
+        document.getElementById("success").style.display = "none";
+        document.querySelector(".newsletter").style.display = "block";
+        document.getElementById("form").reset();
+        document.getElementById("submit-btn").disabled = true;
+      }
+    </script>
+  </body>
+</html>
